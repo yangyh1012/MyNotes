@@ -15,9 +15,9 @@
 		D75800EF1B1DD7DA003B5965 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75800ED1B1DD7DA003B5965 /* LaunchScreen.xib */; };
 		D75800FB1B1DD7DA003B5965 /* MyNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D75800FA1B1DD7DA003B5965 /* MyNotesTests.m */; };
 		D75801061B1DD96A003B5965 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75801051B1DD96A003B5965 /* DetailViewController.m */; };
-		D758010A1B1DDCE0003B5965 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D75801091B1DDCE0003B5965 /* Note.m */; };
-		D758010E1B1DDDE6003B5965 /* NoteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = D758010D1B1DDDE6003B5965 /* NoteDao.m */; };
-		D7FE78E31B1F03B100455A1C /* NSObject+BlockTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FE78E21B1F03B100455A1C /* NSObject+BlockTool.m */; };
+		D7FE78E61B1F499600455A1C /* NSObject+BlockTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FE78E51B1F499600455A1C /* NSObject+BlockTool.m */; };
+		D7FE78E91B1F49A100455A1C /* NoteDao.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FE78E81B1F49A100455A1C /* NoteDao.m */; };
+		D7FE78EC1B1F49AB00455A1C /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FE78EB1B1F49AB00455A1C /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +46,12 @@
 		D75800FA1B1DD7DA003B5965 /* MyNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNotesTests.m; sourceTree = "<group>"; };
 		D75801041B1DD96A003B5965 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D75801051B1DD96A003B5965 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		D75801081B1DDCE0003B5965 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		D75801091B1DDCE0003B5965 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
-		D758010C1B1DDDE6003B5965 /* NoteDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDao.h; sourceTree = "<group>"; };
-		D758010D1B1DDDE6003B5965 /* NoteDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDao.m; sourceTree = "<group>"; };
-		D7FE78E11B1F03B100455A1C /* NSObject+BlockTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BlockTool.h"; sourceTree = "<group>"; };
-		D7FE78E21B1F03B100455A1C /* NSObject+BlockTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BlockTool.m"; sourceTree = "<group>"; };
+		D7FE78E41B1F499600455A1C /* NSObject+BlockTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+BlockTool.h"; path = "MyNotes/NSObject+BlockTool.h"; sourceTree = "<group>"; };
+		D7FE78E51B1F499600455A1C /* NSObject+BlockTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+BlockTool.m"; path = "MyNotes/NSObject+BlockTool.m"; sourceTree = "<group>"; };
+		D7FE78E71B1F49A100455A1C /* NoteDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteDao.h; path = MyNotes/NoteDao.h; sourceTree = "<group>"; };
+		D7FE78E81B1F49A100455A1C /* NoteDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteDao.m; path = MyNotes/NoteDao.m; sourceTree = "<group>"; };
+		D7FE78EA1B1F49AB00455A1C /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = MyNotes/Note.h; sourceTree = "<group>"; };
+		D7FE78EB1B1F49AB00455A1C /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = MyNotes/Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 		D75801071B1DDCAF003B5965 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				D75801081B1DDCE0003B5965 /* Note.h */,
-				D75801091B1DDCE0003B5965 /* Note.m */,
+				D7FE78EA1B1F49AB00455A1C /* Note.h */,
+				D7FE78EB1B1F49AB00455A1C /* Note.m */,
 			);
 			name = domain;
 			path = ..;
@@ -149,8 +149,8 @@
 		D758010B1B1DDDD6003B5965 /* dao */ = {
 			isa = PBXGroup;
 			children = (
-				D758010C1B1DDDE6003B5965 /* NoteDao.h */,
-				D758010D1B1DDDE6003B5965 /* NoteDao.m */,
+				D7FE78E71B1F49A100455A1C /* NoteDao.h */,
+				D7FE78E81B1F49A100455A1C /* NoteDao.m */,
 			);
 			name = dao;
 			path = ..;
@@ -159,8 +159,8 @@
 		D7FE78E01B1F033B00455A1C /* tools */ = {
 			isa = PBXGroup;
 			children = (
-				D7FE78E11B1F03B100455A1C /* NSObject+BlockTool.h */,
-				D7FE78E21B1F03B100455A1C /* NSObject+BlockTool.m */,
+				D7FE78E41B1F499600455A1C /* NSObject+BlockTool.h */,
+				D7FE78E51B1F499600455A1C /* NSObject+BlockTool.m */,
 			);
 			name = tools;
 			path = ..;
@@ -266,12 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D758010A1B1DDCE0003B5965 /* Note.m in Sources */,
 				D75800E71B1DD7DA003B5965 /* ViewController.m in Sources */,
-				D7FE78E31B1F03B100455A1C /* NSObject+BlockTool.m in Sources */,
+				D7FE78E61B1F499600455A1C /* NSObject+BlockTool.m in Sources */,
 				D75800E41B1DD7DA003B5965 /* AppDelegate.m in Sources */,
+				D7FE78EC1B1F49AB00455A1C /* Note.m in Sources */,
 				D75800E11B1DD7DA003B5965 /* main.m in Sources */,
-				D758010E1B1DDDE6003B5965 /* NoteDao.m in Sources */,
+				D7FE78E91B1F49A100455A1C /* NoteDao.m in Sources */,
 				D75801061B1DD96A003B5965 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
