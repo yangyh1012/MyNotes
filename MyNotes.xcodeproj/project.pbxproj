@@ -75,9 +75,6 @@
 		D75800D21B1DD7DA003B5965 = {
 			isa = PBXGroup;
 			children = (
-				D7FE78E01B1F033B00455A1C /* tools */,
-				D758010B1B1DDDD6003B5965 /* dao */,
-				D75801071B1DDCAF003B5965 /* domain */,
 				D75800DD1B1DD7DA003B5965 /* MyNotes */,
 				D75800F71B1DD7DA003B5965 /* MyNotesTests */,
 				D75800DC1B1DD7DA003B5965 /* Products */,
@@ -105,6 +102,9 @@
 				D75800E81B1DD7DA003B5965 /* Main.storyboard */,
 				D75800EB1B1DD7DA003B5965 /* Images.xcassets */,
 				D75800ED1B1DD7DA003B5965 /* LaunchScreen.xib */,
+				D7FE78E01B1F033B00455A1C /* tools */,
+				D758010B1B1DDDD6003B5965 /* dao */,
+				D75801071B1DDCAF003B5965 /* domain */,
 				D75800DE1B1DD7DA003B5965 /* Supporting Files */,
 			);
 			path = MyNotes;
@@ -143,6 +143,7 @@
 				D75801091B1DDCE0003B5965 /* Note.m */,
 			);
 			name = domain;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D758010B1B1DDDD6003B5965 /* dao */ = {
@@ -152,6 +153,7 @@
 				D758010D1B1DDDE6003B5965 /* NoteDao.m */,
 			);
 			name = dao;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D7FE78E01B1F033B00455A1C /* tools */ = {
@@ -161,6 +163,7 @@
 				D7FE78E21B1F03B100455A1C /* NSObject+BlockTool.m */,
 			);
 			name = tools;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
