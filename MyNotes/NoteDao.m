@@ -46,7 +46,7 @@ static NoteDao *sharedManager = nil;
     return sharedManager;
 }
 
-- (BOOL)create:(Note *)note {
+- (BOOL)insert:(Note *)note {
     
     if ([self.dateList count] > 0) {
         

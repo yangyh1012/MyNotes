@@ -76,7 +76,7 @@
         note1.content = self.textView.text;
         
         //同步，会卡主线程
-        [[NoteDao sharedManager] create:note1];
+        [[NoteDao sharedManager] insert:note1];
         
         void(^block)(void) = [self blockForEventWithIdentifier:@"ViewController1"];
         

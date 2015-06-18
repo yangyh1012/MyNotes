@@ -13,7 +13,7 @@
 
 + (NoteDao *)sharedManager;
 
-- (BOOL)create:(Note *)note;
+- (BOOL)insert:(Note *)note;
 
 - (BOOL)modify:(Note *)note;
 

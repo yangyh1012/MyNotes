@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) NSMutableArray *dataList;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation ViewController
@@ -31,6 +33,17 @@
     self.tableView.dataSource = self;
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    /**
+     
+     添加下拉刷新
+     
+     */
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self
+                            action:@selector(handleRefresh:)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
     
     //同步，会卡主线程
     self.dataList = [[NoteDao sharedManager] findAllDatas];
@@ -77,6 +90,34 @@
     }
 }
 
+/**
+ *  自动刷新处理
+ */
+- (void)handleRefresh:(id)paramSender {
+    
+    /* Put a bit of delay between when the refresh control is released
+     and when we actually do the refreshing to make the UI look a bit
+     smoother than just doing the update without the animation */
+    int64_t delayInSeconds = 1.0f;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        /* Add the current date to the list of dates that we have
+         so that when the table view is refreshed, a new item will appear
+         on the screen so that the user will see the difference between
+         the before and the after of the refresh */
+        Note *note1 = [[Note alloc] init];
+        note1.date = [NSDate date];
+        note1.content = @"自动添加测试数据";
+        
+        //同步，会卡主线程
+        [[NoteDao sharedManager] insert:note1];
+        
+        [self.refreshControl endRefreshing];
+        [self.tableView reloadData];
+    });
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -114,6 +155,16 @@
     return YES;
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCellEditingStyle result = UITableViewCellEditingStyleNone;
+    if ([tableView isEqual:self.tableView]) {
+        
+        result = UITableViewCellEditingStyleDelete;
+    }
+    return result;
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -145,6 +196,43 @@
     } withIdentifier:@"ViewController2"];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+/**
+ *  显示快捷菜单
+ */
+- (BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+}
+
+/**
+ *  决定显示何种菜单
+ */
+- (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ 
+    /**
+     *  显示copy菜单
+     */
+    if (action == @selector(copy:)) {
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+/**
+ *  对快捷菜单进行处理
+ */
+- (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+    
+    if (action == @selector(copy:)){
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
+        [pasteBoard setString:cell.textLabel.text];
+    }
 }
 
 @end
